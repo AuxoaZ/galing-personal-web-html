@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Fu Zhe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>DASHBOARD ADMIN</h1>
+    </header>
+
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <div class="login-card">
+            <h2>Authentication</h2>
+            <div class="input-group">
+                <label>Access Key</label>
+                <input type="password" id="access-key" placeholder="••••••••">
+            </div>
+            <button id="login-btn">Login</button>
+            <p id="login-error" style="color: #ef4444; font-size: 0.875rem; margin-top: 1rem; text-align: center; display: none;">Invalid Access Key</p>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <main id="dashboard">
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="metadata"><i class="fas fa-search"></i> SEO / Meta</button>
+            <button class="tab-btn" data-tab="profile"><i class="fas fa-user"></i> Profile</button>
+            <button class="tab-btn" data-tab="bio"><i class="fas fa-book"></i> Bio</button>
+            <button class="tab-btn" data-tab="talks"><i class="fas fa-microphone"></i> Talks</button>
+            <button class="tab-btn" data-tab="news"><i class="fas fa-newspaper"></i> News</button>
+        </div>
+
+        <form id="admin-form">
+            <!-- Metadata Tab -->
+            <div class="tab-pane active" id="tab-metadata">
+                <div class="section-grid">
+                    <div class="input-group">
+                        <label>Site Title</label>
+                        <input type="text" name="metadata.title">
+                    </div>
+                    <div class="input-group">
+                        <label>Author Name</label>
+                        <input type="text" name="metadata.author">
+                    </div>
+                    <div class="input-group" style="grid-column: span 2;">
+                        <label>Keywords (Comma separated)</label>
+                        <textarea name="metadata.keywords" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <div class="tab-pane" id="tab-profile" style="display: none;">
+                <div class="section-grid">
+                    <div class="input-group">
+                        <label>Display Name</label>
+                        <input type="text" name="profile.name">
+                    </div>
+                    <div class="input-group">
+                        <label>Job Title / Subtitle</label>
+                        <input type="text" name="profile.subtitle">
+                    </div>
+                    <div class="input-group">
+                        <label>Profile Image Path</label>
+                        <input type="text" name="profile.image">
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="text" name="profile.email">
+                    </div>
+                </div>
+                <hr style="margin: 2rem 0; border-color: var(--border);">
+                <h3>Social Icons</h3>
+                <div id="social-list">
+                    <!-- Dynamic Social Inputs -->
+                </div>
+                <button type="button" class="add-btn" onclick="addItem('social')"><i class="fas fa-plus"></i> Add Social Icon</button>
+            </div>
+
+            <!-- Bio Tab -->
+            <div class="tab-pane" id="tab-bio" style="display: none;">
+                <div class="input-group">
+                    <label>Job Market Badge Status</label>
+                    <select name="job_market.show">
+                        <option value="true">Visible</option>
+                        <option value="false">Hidden</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Job Market Text</label>
+                    <input type="text" name="job_market.text">
+                </div>
+                <h3>Bio Paragraphs (HTML supported)</h3>
+                <div id="bio-list">
+                    <!-- Dynamic Bio Paragraphs -->
+                </div>
+                <button type="button" class="add-btn" onclick="addItem('bio')"><i class="fas fa-plus"></i> Add Paragraph</button>
+            </div>
+
+            <!-- Talks Tab -->
+            <div class="tab-pane" id="tab-talks" style="display: none;">
+                <h3>Upcoming Talks</h3>
+                <div id="talks-list">
+                    <!-- Dynamic Talks -->
+                </div>
+                <button type="button" class="add-btn" onclick="addItem('talks')"><i class="fas fa-plus"></i> Add Talk</button>
+            </div>
+
+            <!-- News Tab -->
+            <div class="tab-pane" id="tab-news" style="display: none;">
+                <h3>Recent News</h3>
+                <div id="news-list">
+                    <!-- Dynamic News -->
+                </div>
+                <button type="button" class="add-btn" onclick="addItem('news')"><i class="fas fa-plus"></i> Add News Entry</button>
+            </div>
+        </form>
+    </main>
+
+    <div class="save-bar" id="save-bar" style="display: none;">
+        <p id="status-msg" style="margin-right: auto; color: var(--text-muted); font-size: 0.875rem; align-self: center;"></p>
+        <button id="save-btn"><i class="fas fa-cloud-upload-alt"></i> SAVE & DEPLOY</button>
+    </div>
+
+    <div id="toast">Changes saved successfully!</div>
+
+    <script src="app.js"></script>
+</body>
+</html>

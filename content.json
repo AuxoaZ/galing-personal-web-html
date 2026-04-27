@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "title": "Zhe Fu 傅哲",
+    "author": "Zhe Fu",
+    "description": "",
+    "keywords": "Zhe Fu, 傅哲, Berkeley, research, machine learning, AI, academic, fu-zhe.com"
+  },
+  "profile": {
+    "name": "Zhe Fu 傅哲",
+    "subtitle": "Ph.D. Candidate at UC Berkeley",
+    "image": "assets/img/headshot.JPG@77508f43211bbb77780dccfb6b31ff5b",
+    "email": "zhefu@berkeley.edu",
+    "social": [
+      {
+        "type": "email",
+        "url": "mailto:zhefu@berkeley.edu",
+        "icon": "fa-solid fa-envelope"
+      },
+      {
+        "type": "orcid",
+        "url": "https://orcid.org/0000-0003-4478-3978",
+        "icon": "ai ai-orcid"
+      },
+      {
+        "type": "google-scholar",
+        "url": "https://scholar.google.com/citations?user=Qeq5-TsAAAAJ",
+        "icon": "ai ai-google-scholar"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/zhe-fu-fuzhe",
+        "icon": "fa-brands fa-linkedin"
+      },
+      {
+        "type": "x-twitter",
+        "url": "https://twitter.com/ZheFu1",
+        "icon": "fa-brands fa-x-twitter"
+      }
+    ]
+  },
+  "bio": [
+    "Hello! 你好！I’m Zhe, a final-year Ph.D. Candidate in <a href=\"https://ce.berkeley.edu/programs/trans\" rel=\"external nofollow noopener\" target=\"_blank\">Transportation Engineering</a>, and M.S. Candidate in <a href=\"https://eecs.berkeley.edu/\" rel=\"external nofollow noopener\" target=\"_blank\">Electrical Engineering and Computer Sciences</a> at University of California, Berkeley, advised by Professor <a href=\"https://bayen.berkeley.edu/alex-bayen\" rel=\"external nofollow noopener\" target=\"_blank\">Alexandre Bayen</a>. I also work with Professor <a href=\"https://people.eecs.berkeley.edu/~tomlin/\" rel=\"external nofollow noopener\" target=\"_blank\">Claire Tomlin</a>, and visited Autonomous Systems Lab <a href=\"https://stanfordasl.github.io/\" rel=\"external nofollow noopener\" target=\"_blank\">(ASL)</a> at Stanford led by Professor <a href=\"https://profiles.stanford.edu/marco-pavone\" rel=\"external nofollow noopener\" target=\"_blank\">Marco Pavone</a>.",
+    "I am fortunate to conduct research in Berkeley Artificial Intelligence Research <a href=\"https://bair.berkeley.edu/\" rel=\"external nofollow noopener\" target=\"_blank\">(BAIR)</a>, the Institute of Transportation Studies <a href=\"https://its.berkeley.edu/\" rel=\"external nofollow noopener\" target=\"_blank\">(ITS)</a>, Center for Information Technology and Research in the Interest of Society <a href=\"https://citris-uc.org/\" rel=\"external nofollow noopener\" target=\"_blank\">(CITRIS)</a>, Berkeley Deep Drive <a href=\"https://deepdrive.berkeley.edu/\" rel=\"external nofollow noopener\" target=\"_blank\">(BDD)</a>, and California Partners for Advanced Transportation Technology <a href=\"https://path.berkeley.edu/\" rel=\"external nofollow noopener\" target=\"_blank\">(California PATH)</a>.",
+    "I completed an M.S. in Transportation Engineering at UC Berkeley and a B.S. in Transportation Engineering at Tongji University, along with a Law minor at Fudan University, and research internships at <a href=\"https://usa.honda-ri.com/\" rel=\"external nofollow noopener\" target=\"_blank\">Honda Research Institute</a> and the Tsinghua–Berkeley Shenzhen Institute.",
+    "For more information, please refer to my <strong>CV</strong> <a href=\"assets/pdf/Zhe_Fu_CV.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"float-center\"><i class=\"fas fa-file-pdf\"></i></a>."
+  ],
+  "job_market": {
+    "show": true,
+    "text": "I am on the 2025-2026 job market!"
+  },
+  "research_interests": {
+    "title": "Research Interests",
+    "paragraphs": [
+      "I develop <span style=\"color:#003262; font-weight:bold;\">model-informed, human-centered learning and control</span> methods for complex cyber–physical systems, with a focus on <span style=\"color:#3B7EA1; font-weight:bold;\">mixed autonomy</span>, where automated and human agents co-exist and interact dynamically.",
+      "My research integrates <strong>physics-informed neural modeling</strong> of distributed parameter systems (e.g., hyperbolic PDEs), <span style=\"color:#003262; font-weight:bold;\">model-guided and data-driven control design</span>, and <span style=\"color:#3B7EA1; font-weight:bold;\">field-validated deployment</span> on real hardware platforms.",
+      "Across automated vehicles, drone fleets, and emerging urban air mobility, I aim to develop autonomy that is <span style=\"color:#003262; font-weight:bold;\">interpretable, efficient, and aligned with human behavior</span>, enabling system-level improvements in safety, sustainability, and societal well-being.",
+      "I was one of the main student contributors for a 100-AVs field operational test on the I-24 highway in Nashville TN. More information about this large-scale field experiment can be found <a href=\"https://circles-consortium.github.io/\" rel=\"external nofollow noopener\" target=\"_blank\">here</a>. I also shared this work with a broader audience in the <strong>UC Grad Slam</strong>, where graduate students present their research in just 3 minutes.<br> My talk on how a few smart cars can smooth stop-and-go traffic waves earned me the <strong>Runner-up award at UC Berkeley</strong>. ▶️ <a href=\"https://www.youtube.com/watch?v=K78GxKZDb-g\" rel=\"external nofollow noopener\" target=\"_blank\">Watch the talk here</a>"
+    ]
+  },
+  "upcoming_talks": [
+    {
+      "date": "Apr 07, 2026",
+      "content": "I will give a guest lecture at CMU for the course 12787: Special Topics: Physics-Informed Machine Learning, hosted by Professor Su Jiang."
+    },
+    {
+      "date": "Apr 09, 2026",
+      "content": "I will give a seminar talk for TBD (Travel Behavior and Demand) Center Webinar Series, hosted by Arizona State University."
+    },
+    {
+      "date": "Apr 17, 2026",
+      "content": "I will give an oral presentation at the 8th NorCal Control Workshop."
+    },
+    {
+      "date": "Apr 24, 2026",
+      "content": "I will present our paper on “(U)NFV: Supervised and Unsupervised Neural Finite Volume Methods for Solving Hyperbolic PDEs” at ICLR 2026. Look forward to chatting with you at Rio, Brazil!"
+    }
+  ],
+  "recent_news": [
+    {
+      "date": "Mar 2026",
+      "content": "🏆 <strong>Outstanding Graduate Student Peer Mentor</strong>: Recognized as an <strong><a href=\"https://grad.berkeley.edu/news/celebrate-mentorship-at-cal-for-2026/\" rel=\"external nofollow noopener\" target=\"_blank\">Outstanding Graduate Student Peer Mentor</a></strong> at UC Berkeley, awarded to only 4 students campuswide for exceptional mentorship."
+    },
+    {
+      "date": "Feb 2026",
+      "content": "🥇 <strong>CTF Fellowship Winner</strong>: Honor to receive the <a href=\"https://its.berkeley.edu/news/fu-yi-ju-receive-ctf-lipman-family-sustainable-transportation-graduate-fellowships\" rel=\"external nofollow noopener\" target=\"_blank\">CTF Lipman Family Sustainable Transportation Graduate Fellowship</a>."
+    },
+    {
+      "date": "Feb 2026",
+      "content": "🥇 <strong>WTS Scholarship Winner</strong>: Happy to get notified that I am the WTS SF Chapter’s winner for the Bridgette Beato Leadership Legacy Graduate Scholarship."
+    },
+    {
+      "date": "Jan 2026",
+      "content": "🎉 <strong>Stanford Energy Fellow</strong>: I was selected as one of 10 scholars worldwide from different fields for the <a href=\"https://energypostdoc.stanford.edu/\" rel=\"external nofollow noopener\" target=\"_blank\">Stanford Energy Postdoctoral Fellowship</a>. The fellowship can grant for three years independent research funding with flexible duration."
+    }
+  ],
+  "footer": "© Copyright 2026 Zhe Fu."
+}

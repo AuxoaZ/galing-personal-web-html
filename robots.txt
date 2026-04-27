@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://fu-zhe.com/sitemap.xml
