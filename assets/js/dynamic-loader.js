@@ -4,8 +4,13 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('content.json')
-        .then(response => response.json())
+    fetch('/content.json') // ensure absolute path from root
+        .then(response => {
+            if(!response.ok) {
+                 return fetch('../content.json').then(r => r.json()); // Fallback for subdirectories
+            }
+            return response.json();
+        })
         .then(data => {
             renderContent(data);
         })
@@ -17,11 +22,52 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderContent(data) {
     // 1. Metadata
     if (data.metadata) {
-        document.title = data.metadata.title || document.title;
+        // Only update title if it's the home page, or append to it
+        if(window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+            const isSubPage = window.location.pathname.split('/').filter(p => p).length > 0 && !window.location.pathname.endsWith('index.html');
+            if(!isSubPage) {
+               document.title = data.metadata.title;
+            }
+        }
+        
         const siteTitle = document.getElementById('site-title');
         if (siteTitle) siteTitle.textContent = data.metadata.title;
+        const brandTitle = document.querySelector('.navbar-brand');
+        if (brandTitle) brandTitle.textContent = data.metadata.title;
     }
 
+    // Determine current page based on pathname or specific container IDs
+    const path = window.location.pathname;
+
+    if (path === '/' || path.endsWith('/index.html') && !path.includes('research') && !path.includes('teaching') && !path.includes('service') && !path.includes('awards') && !path.includes('media') && !path.includes('fun') && !path.includes('admin') && !path.includes('cv')) {
+        renderHomePage(data);
+    } 
+    
+    // Check specific containers for sub-pages
+    const container = document.querySelector('article');
+    
+    if (path.includes('/research') && container) {
+        renderResearchPage(data.research, container);
+    } else if (path.includes('/teaching') && container) {
+        container.innerHTML = data.teaching_html || '';
+    } else if (path.includes('/service') && container) {
+        container.innerHTML = data.service_html || '';
+    } else if (path.includes('/awards') && container) {
+        container.innerHTML = data.awards_html || '';
+    } else if (path.includes('/media') && container) {
+        container.innerHTML = data.media_html || '';
+    } else if (path.includes('/fun') && container) {
+        container.innerHTML = data.fun_html || '';
+    }
+    
+    // 6. Footer
+    const footer = document.querySelector('footer .container');
+    if (footer && data.footer) {
+        footer.textContent = data.footer;
+    }
+}
+
+function renderHomePage(data) {
     // 2. Profile
     if (data.profile) {
         const nameEl = document.getElementById('profile-name');
@@ -52,21 +98,13 @@ function renderContent(data) {
     // 3. Bio
     const bioContainer = document.getElementById('bio-content');
     if (bioContainer && data.bio) {
-        // Keep everything after the last paragraph (like Job Market and tables)
         const badgeEl = document.getElementById('job-market-badge');
-        const talksContainer = document.getElementById('upcoming-talks-container');
-        const newsContainer = document.getElementById('recent-news-container');
-        
-        // We only replace the paragraph parts
         let bioHtml = data.bio.map(p => `<p>${p}</p>`).join('');
-        
-        // Re-append the badge if it exists
         if (badgeEl) {
             badgeEl.textContent = data.job_market.text;
             badgeEl.style.display = data.job_market.show ? 'block' : 'none';
             bioHtml += badgeEl.outerHTML;
         }
-        
         bioContainer.innerHTML = bioHtml;
     }
 
@@ -107,10 +145,66 @@ function renderContent(data) {
         `;
         newsContainer.innerHTML = html;
     }
-
-    // 6. Footer
-    const footer = document.querySelector('footer .container');
-    if (footer && data.footer) {
-        footer.textContent = data.footer;
-    }
 }
+
+function renderResearchPage(researchData, container) {
+    if (!researchData) return;
+    
+    // We recreate the publications div exactly as the template expects
+    let html = `
+        <script src="../assets/js/bibsearch.js" type="module"></script>
+        <p><input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to filter"></p>
+        <div class="publications">
+    `;
+    
+    researchData.forEach(yearBlock => {
+        html += `<h2 class="bibliography">${yearBlock.year}</h2>`;
+        html += `<ol class="bibliography">`;
+        
+        yearBlock.items.forEach(item => {
+            html += `
+                <li>
+                    <div class="row">
+                        <div class="col col-sm-2 abbr">
+                            ${item.badge ? `<abbr class="badge rounded w-100">${item.badge}</abbr>` : ''}
+                        </div>
+                        <div id="${item.id}" class="col-sm-8">
+                            <div class="title">${item.title}</div>
+                            <div class="author">${item.authors_html}</div>
+                            ${item.periodical_1 ? `<div class="periodical">${item.periodical_1}</div>` : ''}
+                            ${item.periodical_2 ? `<div class="periodical">${item.periodical_2}</div>` : ''}
+                            ${item.abstract ? `
+                            <div class="links">
+                                <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+                            </div>
+                            <div class="abstract hidden">
+                                <p>${item.abstract}</p>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </li>
+            `;
+        });
+        
+        html += `</ol>`;
+    });
+    
+    html += `</div>`;
+    container.innerHTML = html;
+    
+    // Re-attach abstract click listeners since we overwrote the DOM
+    setTimeout(() => {
+        const absButtons = container.querySelectorAll('.abstract.btn');
+        absButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const abstractDiv = e.target.closest('.col-sm-8').querySelector('.abstract.hidden, .abstract.open');
+                if(abstractDiv) {
+                    abstractDiv.classList.toggle('hidden');
+                    abstractDiv.classList.toggle('open');
+                }
+            });
+        });
+    }, 100);
+}
+
