@@ -6,15 +6,15 @@
     "keywords": "Galing Suwito, laser, research, machine learning, manufacturing, academic"
   },
   "profile": {
-    "name": "Zhe Fu 傅哲",
-    "subtitle": "Ph.D. Candidate at UC Berkeley",
+    "name": "Galing Tirtojati Suwito",
+    "subtitle": "Ph.D. Candidate at Luleå University of Technology",
     "image": "assets/img/headshot.JPG@77508f43211bbb77780dccfb6b31ff5b",
-    "email": "zhefu@berkeley.edu",
+    "email": "galing.tirtojati.suwito@ltu.se",
     "cv_path": "assets/pdf/Zhe_Fu_CV.pdf",
     "social": [
       {
         "type": "email",
-        "url": "mailto:zhefu@berkeley.edu",
+        "url": "mailto:galing.tirtojati.suwito@ltu.se",
         "icon": "fa-solid fa-envelope"
       },
       {
@@ -29,7 +29,7 @@
       },
       {
         "type": "linkedin",
-        "url": "https://www.linkedin.com/in/zhe-fu-fuzhe",
+        "url": "https://www.linkedin.com/in/gtsuwito/",
         "icon": "fa-brands fa-linkedin"
       },
       {
