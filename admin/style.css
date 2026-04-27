@@ -265,3 +265,26 @@ button:active {
 #toast.error {
     background: #ef4444;
 }
+
+/* Quill Editor Fixes for Dark Theme */
+.ql-container.ql-snow {
+    border-color: var(--border) !important;
+}
+
+.ql-toolbar.ql-snow {
+    border-color: var(--border) !important;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 6px 6px 0 0;
+}
+
+.ql-editor {
+    color: #1e293b !important; /* Dark text against white background */
+    font-size: 1rem;
+    min-height: 250px;
+}
+
+.quill-container {
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
