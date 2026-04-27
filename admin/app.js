@@ -1,7 +1,7 @@
 let contentData = {};
 const repoConfig = {
-    owner: 'fuzhe-ucb', // Default owner
-    repo: 'fu-zhe.com'   // Default repo
+    owner: 'AuxoaZ', // GitHub Username
+    repo: 'galing-personal-web-html'   // Nama Repository
 };
 
 document.addEventListener('DOMContentLoaded', () => {
